@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage{blindtext}
+\usepackage{amssymb}
+\usepackage[paperheight=7.55in,paperwidth=5.48in,top=0.1in,bottom=0in,right=0in,left=0in]{geometry}
+\usepackage{pgffor, ifthen}
+\usepackage{hyperref}
+
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\Large\bfseries}{}{0pt}{}
+\titleformat{\subsection}{\normalfont\small\bfseries}{}{0pt}{}
+
+
+\newcommand\Linepage[1][0.35in]{% Change to suit
+  \vbox to \dimexpr\textheight-\pagetotal-#1\relax {% Let TeX do the work...
+    \leaders\hbox to \linewidth{\rule{0pt}{#1}\hrulefill}\vfil
+  }%
+}
+\newcommand\LinepageHalf[1][0.35in]{% Change to suit
+  \vbox to \dimexpr0.5\textheight-\pagetotal-#1\relax {% Let TeX do the work...
+    \leaders\hbox to \linewidth{\rule{0pt}{#1}\hrulefill}\vfil
+  }%
+}
+
+\newenvironment{formatpage}[1]{%
+    {#1}
+}{
+    \Linepage
+}
+\newenvironment{formatday}[1]{%
+    {#1}
+}{
+    \LinepageHalf
+}
+
+
+\title{\textbf{2024} } 
+\author{By Lund}
+
+\begin{document}
+
+
+
+\tableofcontents
+
+\pagebreak
